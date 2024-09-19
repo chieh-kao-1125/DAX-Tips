@@ -1,4 +1,4 @@
-##ISBLANK()
+## ISBLANK()
 MEASURE2 = 
 IF(
     ISBLANK([MEASURE1]), 
@@ -6,6 +6,6 @@ IF(
     [MEASURE1]
 )
 
-##COALESCE()
+## COALESCE()
 MEASURE2 = 
 COALESCE([MEASURE1], "-")
