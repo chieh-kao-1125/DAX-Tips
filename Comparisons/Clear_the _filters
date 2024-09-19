@@ -1,0 +1,18 @@
+## ALL()
+MEASURE2 = 
+CALCULATE(
+    [MEASURE1],
+    ALL(
+        'Table'
+    )
+)
+
+## REMOVEFILTER()
+## Can only be used in CALCULATE(), not a table function.
+MEASURE2 = 
+CALCULATE(
+    [MEASURE1],
+    REMOVEFILTER(
+        'Table'
+    )
+)
