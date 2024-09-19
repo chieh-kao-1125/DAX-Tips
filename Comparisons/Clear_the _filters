@@ -7,12 +7,12 @@ CALCULATE(
     )
 )
 
-## REMOVEFILTER()
+## REMOVEFILTERS()
 ## Can only be used in CALCULATE(), not a table function.
 MEASURE2 = 
 CALCULATE(
     [MEASURE1],
-    REMOVEFILTER(
+    REMOVEFILTERS(
         'Table'
     )
 )
