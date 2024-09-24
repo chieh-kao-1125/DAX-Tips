@@ -1,0 +1,14 @@
+## Act like a physical relationship, but will fail if mapping is not 100%.
+Measure2 = 
+CALCULATE(
+    [Measure1], 
+    TREATAS(
+        SUMMARIZE(
+            'Table2', 
+            'Table2'[Col1], 
+            'Table2'[Col2]
+        ), 
+        'Table1'[Col1], 
+        'Table1'[Col2]
+    )
+)
