@@ -1,7 +1,7 @@
 ## ALL()
-MEASURE2 = 
+Measure2 = 
 CALCULATE(
-    [MEASURE1],
+    [Measure1],
     ALL(
         'Table'
     )
@@ -9,9 +9,9 @@ CALCULATE(
 
 ## REMOVEFILTERS()
 ## Can only be used in CALCULATE(), not a table function.
-MEASURE2 = 
+Measure2 = 
 CALCULATE(
-    [MEASURE1],
+    [Measure1],
     REMOVEFILTERS(
         'Table'
     )
