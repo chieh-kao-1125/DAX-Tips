@@ -1,0 +1,5 @@
+## Used on the many side of a relationship
+MEASURE = 
+COUNTROWS(
+RELATEDTABLE('Table1')
+)
