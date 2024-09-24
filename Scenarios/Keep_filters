@@ -1,0 +1,8 @@
+## KEEPFILTERS()
+MEASURE2 = 
+CALCULATE(
+    [MEASURE1], 
+    KEEPFILTERS(
+        'TABLE'[COL1] = VALUE1
+    )
+)
