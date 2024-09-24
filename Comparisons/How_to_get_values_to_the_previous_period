@@ -1,0 +1,32 @@
+#### PARELLELPERIOD()
+## Computes the "entire" peiod of the interval.
+## The "Total" rows show "sum" of this measure.
+Last Quarter Sales (PARELLELPERIOD) = 
+CALCULATE(
+    [Customer Sales], 
+    PARALLELPERIOD(
+        'Calendar'[Transaction_Date], 
+        -1, 
+        QUARTER
+    )
+)
+
+#### PREVIOUSQUARTER()
+## Computes the "entire" peiod of the interval. 
+## The "Total" rows show "only" previous period, not sum.
+Last Quarter Sales (PREVIOUSQUARTER) = 
+CALCULATE(
+    [Customer Sales], 
+    PREVIOUSQUARTER(
+        'Calendar'[Transaction_Date]
+    )
+)
+
+#### SAMEPERIODLASTYEAR()
+## Depends on the row/column context to show the value last year.
+## The "Total" rows show "sum" of this measure.
+Last Years Sales (SAMEPERIODLASTYEAR) = 
+CALCULATE(
+    [Customer Sales], 
+    SAMEPERIODLASTYEAR('Calendar'[Transaction_Date])
+)
