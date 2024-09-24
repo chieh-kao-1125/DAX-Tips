@@ -1,0 +1,17 @@
+## DISTINCT()
+## Ignore BLANK
+Measure1 = 
+COUNTROWS(
+    DISTINCT(
+        'Table'[Col]
+    )
+)
+
+## VALUES()
+## Include BLANK.
+Measure1 = 
+COUNTROWS(
+    VALUES(
+        'Table'[Col]
+    )
+)
