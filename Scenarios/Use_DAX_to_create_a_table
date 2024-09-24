@@ -1,0 +1,15 @@
+TABLE = 
+SUMMARIZE(
+    FILTER(
+        'Table1', 
+        'Table1'[Col1] <> 'Table1'[Col2] &&
+        'Table1'[Col3] = Val1 &&
+        'Table1'[Col4] in {Val2, Val3}        
+    ),
+    'Table1'[Col1],
+    'Table1'[Col2], 
+    'Table1'[Col3],
+    'Table1'[Col5], 
+    'Table2'[Col1], 
+    'Table3'[Col1]
+)
