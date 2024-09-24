@@ -1,11 +1,11 @@
 ## ISBLANK()
-MEASURE2 = 
+Measure2 = 
 IF(
-    ISBLANK([MEASURE1]), 
+    ISBLANK([Measure1]), 
     "-",
-    [MEASURE1]
+    [Measure1]
 )
 
 ## COALESCE()
-MEASURE2 = 
-COALESCE([MEASURE1], "-")
+Measure2 = 
+COALESCE([Measure1], "-")
