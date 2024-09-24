@@ -1,0 +1,52 @@
+#### Returns all combinations of data sets.
+## CROSSJOIN()
+Table = 
+CROSSJOIN(
+    VALUES(
+        'Table1'[Col1]
+    ),
+    VALUES(
+        'Table2'[Col2]
+    )
+)
+
+#### Act like append.
+## UNION()
+Demo_UNION = 
+UNION(
+    'Table1',
+    'Table2'
+)
+
+#### Return data in the left table, but not in the righ table.
+## EXCEPT()
+Table = 
+EXCEPT(
+    'Table1',
+    FILTER(
+        'Table1', 
+        'Table1'[Col1] > Value1
+    )
+)
+
+#### Act like left join
+## INTERSECT()
+Table = 
+CALCULATETABLE(
+    INTERSECT(
+        ADDCOLUMNS(
+            Table1, 
+            "Measure_name1", 
+            [Measure1], 
+            "Measure_name2",
+            [Measure2]
+        ), 
+        ADDCOLUMNS(
+            Table2, 
+            "Measure_name1", 
+            [Measure1], 
+            "Measure_name2",
+            [Measure2]
+        )
+    )
+)
