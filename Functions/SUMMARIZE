@@ -1,3 +1,4 @@
+## Act like distinct on columns of a table.
 TABLE = 
 SUMMARIZE(
     FILTER(
