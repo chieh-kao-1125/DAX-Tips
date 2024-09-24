@@ -1,0 +1,8 @@
+Measure = 
+SUMX(
+    'Table1',
+    'Table1'[Col1] * 
+    RELATED(
+        'Table2'[Col2]
+    )
+)
