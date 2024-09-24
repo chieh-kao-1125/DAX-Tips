@@ -7,6 +7,7 @@ SELECTEDVALUE(
 
 ## ALLSELECTED()
 ## Shows the total of values selected from slicers.
+## Ignores row and column filters with in a visual.
 Measure2 = 
 CALCULATE(
     [Measure1], 
