@@ -1,3 +1,4 @@
+## Retrieves values from column of other table
 Measure = 
 SUMX(
     'Table1',
