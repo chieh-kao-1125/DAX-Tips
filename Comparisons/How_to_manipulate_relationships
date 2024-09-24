@@ -1,0 +1,21 @@
+#### Use an inactive relationship instead between two related tables in a measure.
+## USERELATIONSHIP()
+Measure2 = 
+CALCULATE(
+    [Measure1], 
+    USERELATIONSHIP(
+        'Table1'[Col1], 
+        'Table2'[Col1]
+    )
+)
+
+#### Change the direction of a relationship in a measure.
+## CROSSFILTER()
+Measure2 = 
+CALCULATE(
+    [Measure1],
+    CROSSFILTER(
+        'Table1'[Col1], 
+        'Table2'[Col1],
+        BOTH
+    )
