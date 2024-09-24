@@ -1,0 +1,26 @@
+#### Reduce columns from an existed table (can also generate new columns)
+## SELECTEDCOLUMNS()
+Table = 
+SELECTCOLUMNS(
+    FILTER(
+        'Table_Source', 
+        'Table_Source'[Col1] IN {Value1, Value2}
+    ),
+    "Col2_name", 
+    'Table_Source'[Col2] & " " & 'Table_Source'[Col2_1] 
+)
+
+#### Add columns to an existed table
+## ADDCOLUMNS
+Table = 
+ADDCOLUMNS(
+    FILTER(
+        'Table_Source', 
+        'Table_Source'[Col1] IN {Value1, Value2}
+    ),
+    "Col3",
+    'Table_Source'[Col3],
+    "Col2_name", 
+    'Table_Source'[Col2] & " " & 'Table_Source'[Col2_1] 
+)
+
