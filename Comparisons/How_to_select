@@ -16,6 +16,7 @@ CALCULATE(
 
 ## ALLEXCEPT()
 ## Returns the total of values based on the listed column.
+## Removes all context filters except the filters applied to the columns listed.
 Measure2 = 
 CALCULATE(
     [Measure1],
