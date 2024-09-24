@@ -15,7 +15,7 @@ CALCULATE(
 )
 
 ## ALLEXCEPT()
-## Returns the total of values based on the selected column level 
+## Returns the total of values based on the listed column.
 Measure2 = 
 CALCULATE(
     [Measure1],
