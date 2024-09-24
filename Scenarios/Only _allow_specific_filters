@@ -1,8 +1,8 @@
 ## KEEPFILTERS()
-MEASURE2 = 
+Measure2 = 
 CALCULATE(
-    [MEASURE1], 
+    [Measure1], 
     KEEPFILTERS(
-        'TABLE'[COL1] = VALUE1
+        'Table'[Col1] = Value1
     )
 )
