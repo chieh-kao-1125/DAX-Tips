@@ -1,0 +1,27 @@
+## SELECTEDVALUE()
+## Shows each selected value from slicers.
+Measure1 = 
+SELECTEDVALUE(
+    'Table'[Col1]
+)
+
+## ALLSELECTED()
+## Shows the total of values selected from slicers.
+Measure2 = 
+CALCULATE(
+    [Measure1], 
+    ALLSELECTED(
+    )
+)
+
+## ALLEXCEPT()
+## Returns the total of values based on the selected column level 
+Measure2 = 
+CALCULATE(
+    [Measure1],
+    ALLEXCEPT(
+        'Table1',
+        'Table2'[Col2],
+        'Table3'[Col3]
+    )
+)
