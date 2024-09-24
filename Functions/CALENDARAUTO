@@ -1,0 +1,21 @@
+CALENDARAUTO = 
+VAR MinYear = YEAR(MIN('Calendar'[Transaction_Date]))
+VAR MaxYear = YEAR(MAX('Calendar'[Transaction_Date]))
+
+RETURN 
+ADDCOLUMNS(
+    FILTER(
+        CALENDARAUTO(), --Generate [Date] automatically, so it can be used below.
+        YEAR([Date]) >= MinYear &&
+        YEAR([Date]) <= MaxYear
+    ),
+    "Year", YEAR([Date]), 
+    "Quarter", "Q" & INT(FORMAT([Date], "q")),
+    "Quarter Number", INT(FORMAT([Date], "q")),
+    "Month Number", MONTH([Date]),
+    "Month Short", FORMAT([Date], "mmm"), 
+    "Week Number", WEEKNUM([Date]),
+    "Week Day NAME", FORMAT([Date], "DDD"),
+    "Week Day Number", WEEKDAY([Date], 2),
+    "Weekends", IF(FORMAT([Date], "DDD") IN {"Sun", "Sat"}, "Y", "N")
+)
