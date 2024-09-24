@@ -1,0 +1,22 @@
+## INTERSECT()
+## Like left join
+
+Table = 
+CALCULATETABLE(
+    INTERSECT(
+        ADDCOLUMNS(
+            Table1, 
+            "Measure_name1", 
+            [Measure1], 
+            "Measure_name2",
+            [Measure2]
+        ), 
+        ADDCOLUMNS(
+            Table2, 
+            "Measure_name1", 
+            [Measure1], 
+            "Measure_name2",
+            [Measure2]
+        )
+    )
+)
