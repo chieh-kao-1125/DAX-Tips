@@ -1,0 +1,15 @@
+## Use IF() AND HASONEVALUE() to remove ranking on "Total" row.
+Rank of Rounded CUSTOMER Sales (RANKX) = 
+IF(
+    HASONEVALUE('Product Lookup'[product_category]), 
+    RANKX(
+        ALL(
+            'Product Lookup'[product_category]
+        ), 
+        [Rounded Customer Sales], 
+        ,
+        DESC,
+        DENSE
+    ), 
+    ""
+)
