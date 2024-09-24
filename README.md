@@ -4,3 +4,4 @@ This is a place to record the comparisons among DAX and also solutions to certai
 
 👉 [**Comparisons**](https://github.com/chieh-kao-1125/DAX-Tips/tree/main/Comparisons)
 
+👉 [**Scenarios**](https://github.com/chieh-kao-1125/DAX-Tips/tree/main/Scenarios)
