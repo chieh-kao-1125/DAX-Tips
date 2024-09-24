@@ -1,4 +1,4 @@
-## KEEPFILTERS()
+## Only  allow specific filters
 Measure2 = 
 CALCULATE(
     [Measure1], 
