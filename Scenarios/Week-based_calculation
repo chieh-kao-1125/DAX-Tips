@@ -1,0 +1,69 @@
+#### Should create Fiscal year layers first.
+
+#### Last week
+## Use DATEADD() instead
+Last Week Sales 4-5-4 (DATEADD) = 
+CALCULATE(
+    [Customer Sales], 
+    DATEADD(
+        '4-5-4 Calendar'[Date], 
+        -7, 
+        DAY
+    )
+)
+
+#### Lat quarter
+Last Quarter Sales (4-5-4) = 
+CALCULATE(
+    [Customer Sales], 
+    FILTER(
+        ALL(
+            '4-5-4 Calendar'
+        ), 
+        IF(
+            SELECTEDVALUE('4-5-4 Calendar'[FiscalQuarter]) = 1, 
+            '4-5-4 Calendar'[FiscalQuarter] = 4 && 
+            '4-5-4 Calendar'[FiscalYear] = SELECTEDVALUE('4-5-4 Calendar'[FiscalYear]) - 1, 
+            '4-5-4 Calendar'[FiscalYear] = SELECTEDVALUE('4-5-4 Calendar'[FiscalYear]) && 
+            '4-5-4 Calendar'[FiscalQuarter] = SELECTEDVALUE('4-5-4 Calendar'[FiscalQuarter]) - 1
+        )
+    )
+)
+
+#### MTD
+MTD Sales (4-5-4) = 
+VAR MaxDate = MAX('4-5-4 Calendar'[Date])
+VAR MaxPeriod = MAX('4-5-4 Calendar'[FiscalMonthYear])
+
+RETURN
+IF(
+    HASONEVALUE(
+        '4-5-4 Calendar'[FiscalMonthYear]
+    ),
+    CALCULATE(
+        [Customer Sales], 
+        '4-5-4 Calendar'[Date] <= MaxDate, 
+        '4-5-4 Calendar'[FiscalMonthYear] = MaxPeriod
+    ), 
+    "-"
+)
+
+#### YTD
+YTD Sales (4-5-4) = 
+VAR MaxDate = MAX('4-5-4 Calendar'[Date])
+VAR MaxPeriod = MAX('4-5-4 Calendar'[FiscalYear])
+VAR MaxSaleDate = MAX('Sales by Store'[transaction_date])
+
+RETURN
+IF(
+    HASONEVALUE(
+        '4-5-4 Calendar'[FiscalYear]
+    ),
+    CALCULATE(
+        [Customer Sales], 
+        '4-5-4 Calendar'[Date] <= MaxDate, 
+        '4-5-4 Calendar'[FiscalYear] = MaxPeriod, 
+        '4-5-4 Calendar'[Date] <= MaxSaleDate --add this to avoid rows that are not happening yet.
+    ), 
+    "-"
+)
