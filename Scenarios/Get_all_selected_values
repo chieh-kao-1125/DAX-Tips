@@ -1,0 +1,16 @@
+#### First
+## Use VALUES() to get all selected values, and then use CONCATENATEX() to turn them into a string.
+S_Values = 
+CONCATENATEX(
+    VALUES(TabletobeSelected[ColumntobeSelected]), 
+    TabletobeSelected[ColumntobeSelected], 
+    ", "
+)
+
+#### Second
+## Use CONTAINSSTRING() to decide whether there is target value or not.
+IF(
+    CONTAINSSTRING([S_Values], "TargetValue"), 
+    TRUE(), 
+    FALSE()
+)
